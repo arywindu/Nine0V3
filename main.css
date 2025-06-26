@@ -1,0 +1,58 @@
+body {
+    background-color: #FFE600;
+    padding-top: 3%;
+    font-family: "Square 721 Extended", 'Inter', Arial, sans-serif;                                        
+}
+.customGrey {
+    color: #A1A1A1;
+}
+.customOrange {
+    color: #FF5E00;
+}
+
+.customeBlack {
+    color: #333333;
+}
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    height: 80px;
+    min-width: 0;
+    max-width: 90%;
+}
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scrollMarquee 20s linear infinite;
+    gap: 48px;
+    align-items: center;
+}
+.marquee-track-reverse {
+    animation: scrollMarqueeReverse 20s linear infinite;
+}
+.marquee-track img {
+    max-height: 60px;
+    width: auto;
+    min-width: 120px;
+    max-width: 160px;
+    object-fit: contain;
+}
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@keyframes scrollMarqueeReverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+/* Responsive fix for text wrapping on smaller desktop screens */
+@media (max-width: 1400px) {
+    .customBlack.font-inter.text-wrap {
+        width: 38rem !important;
+    }
+}
+@media (max-width: 1200px) {
+    .customBlack.font-inter.text-wrap {
+        width: 28rem !important;
+    }
+}
