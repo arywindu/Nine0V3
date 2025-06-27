@@ -1,7 +1,7 @@
 body {
     background-color: #FFE600;
     padding-top: 3%;
-    font-family: "Square 721 Extended", 'Inter', Arial, sans-serif;                                        
+    font-family: "Square 721 Extended", 'Inter', Arial, sans-serif;                                     
 }
 .customGrey {
     color: #A1A1A1;
@@ -18,7 +18,7 @@ body {
     position: relative;
     height: 80px;
     min-width: 0;
-    max-width: 90%;
+    max-width: 100%;
 }
 .marquee-track {
     display: flex;
@@ -31,12 +31,14 @@ body {
     animation: scrollMarqueeReverse 20s linear infinite;
 }
 .marquee-track img {
-    max-height: 60px;
+    max-height: 70px;
     width: auto;
     min-width: 120px;
     max-width: 160px;
     object-fit: contain;
 }
+
+
 @keyframes scrollMarquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -54,5 +56,14 @@ body {
 @media (max-width: 1200px) {
     .customBlack.font-inter.text-wrap {
         width: 28rem !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .customBlack.font-inter.text-wrap {
+        width: 20rem !important;
+    }
+    .img-mobile {
+        width: 100% !important;
     }
 }

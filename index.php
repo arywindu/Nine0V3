@@ -20,20 +20,20 @@
         </div>
         <div class="container-fluid mt-4">
             <div class="row">
-                <div class="col-md-4 d-flex align-items-start justify-content-center">
-                    <img src="src/img/mascot.png" alt="Mascot Nine 0" class="img-fluid">
+                <div class="col-md-5 d-flex align-items-start justify-content-start">
+                    <img src="src/img/mascot.png" alt="Mascot Nine 0" class="img-mobile" >
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <p class="customOrange" style="font-size: 14px;">// WEBSITE UNDER CONSTRUCTION</p>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-start">
                         <span style="display:inline-block;width:6px;height:36px;background:#F15A29;margin-right:16px;border-radius:0px;"></span>
-                        <h1 class="mb-0 customBlack" style="font-size: 40px;">VER 3.0 IS COMING SOON</h1>
+                        <h1 class="mb-0 customBlack" style="font-size: 39px;">VER 3.0 IS COMING SOON</h1>
                     </div>
                     <div class="d-flex align-items-center mt-5">
                         <p class="customOrange" style="font-size: 14px;">// ABOUT NINE 0</p>
                     </div>
                     <div class="d-flex align-items-center mt-2">
-                        <p class="customBlack text-wrap" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; width: 48rem;">
+                        <p class="customBlack text-wrap lh-sm" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; width: 48rem; text-align: justify">
                             <span class="customOrange" style="font-weight: bold;">NINE 0</span> is a design company under PT Nawa Surya Kharisma, based in Jakarta and Bali, specializing in strategic creative direction, brand identity, and digital marketing.<br><br>
                             It began as a creative studio formed through the collaboration of RSF (Rafael Surya Fu) and Aik (Akhmad<br> Kharisma), both experienced in handling creative projects for various companies and brands since 2014. Today, NINE 0 delivers more than just aesthetic solutions. We offer strategic creative services that contribute in <br> achieving our clients’ business objectives.<br><br>
                             We understand that a compelling visual is not enough. What our clients need are creative solutions that not only look attractive but also support their business growth. We are committed to delivering results that go beyond aesthetics and create real value.
@@ -103,7 +103,7 @@
                         <img src="src/img/footerNine.svg" alt="Logo Nine 0 Jakarta" style="height:48px;">
                         <p class="mt-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
                             PT Nawa Surya Kharisma<br>
-                            Jl. KH Soleh Ali No.58A, RT. 004 / RW. 011<br>
+                            Jl. KH Soleh Ali No.58A, RT. 004 / RW. 011
                             Tangerang, Banten, 15118
                         </p>
                     </div>
@@ -123,12 +123,14 @@
                             +62 812 90909 587 (WA)
                         </p>
                     </div>
-                    <div class="col-md-2 d-flex flex-column align-items-md-end align-items-center">
+                    
+                    <div class="col-md-3 d-flex flex-column align-items-md-end align-items-center">
                         <div style="height:48px;"></div>
-                        <p class="mt-4 mb-0 text-md-end text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
-                            INSTAGRAM<br>
-                            WHATSAPP<br>
-                            EMAIL
+                        <p class="mt-4 mb-0 text-md-end text-center align-item-start" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; ">
+                            <a class="text-decoration-none customeBlack" href="https://www.instagram.com/nine0studio/" >INSTAGRAM</a><br>
+                            <a class="text-decoration-none customeBlack" href="https://api.whatsapp.com/send/?phone=6281290909587&text&type=phone_number&app_absent=0" >WHATSAPP</a><br>
+                            <a class="text-decoration-none customeBlack" href="mailto:rsf@nine0studio.com" >EMAIL</a>
+                            
                         </p>
                     </div>
                 </div>
