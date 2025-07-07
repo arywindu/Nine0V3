@@ -24,7 +24,7 @@ body {
     display: flex;
     width: max-content;
     animation: scrollMarquee 20s linear infinite;
-    gap: 48px;
+    gap: 3px;
     align-items: center;
 }
 .marquee-track-reverse {

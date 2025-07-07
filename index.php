@@ -2,38 +2,78 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VER 3.0 IS COMING SOON</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favIcon/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/favIcon/favicon.jpg">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="NINE 0 is a design company based in Jakarta and Bali, specializing in creative direction, brand identity, and digital marketing.">
+    <meta name="keywords" content="Nine 0, design, creative, branding, digital marketing, Jakarta, Bali, PT Nawa Surya Kharisma">
+    <meta name="author" content="NINE 0 Studio">
+    <meta property="og:title" content="VER 3.0 IS COMING SOON - NINE 0 Studio">
+    <meta property="og:description" content="NINE 0 is a design company based in Jakarta and Bali, specializing in creative direction, brand identity, and digital marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nine0studio.com/">
+    <meta name="twitter:title" content="VER 3.0 IS COMING SOON - NINE 0 Studio">
+    <meta name="twitter:description" content="NINE 0 is a design company based in Jakarta and Bali, specializing in creative direction, brand identity, and digital marketing.">
     <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom CSS (external) -->
     <link rel="stylesheet" href="main.css">
     <!-- Custom Font -->
     <link href="https://db.onlinewebfonts.com/c/0d37e976ab1e70a9e6a2b3659d180603?family=Square+721+Extended" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <style>
+        /* Responsive helper for mascot and text */
+        @media (max-width: 767.98px) {
+            .img-mobile {
+                width: 80vw;
+                max-width: 100%;
+                height: auto;
+            }
+            .custom-desc {
+                width: 100% !important;
+                max-width: 100% !important;
+                font-size: 13px !important;
+                padding: 0 8px;
+            }
+            .marquee-container {
+                min-height: 48px;
+            }
+        }
+        @media (min-width: 768px) {
+            .custom-desc {
+                width: 48rem !important;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <main class="container d-flex flex-column min-vh-100">
-        <div class="d-flex align-items-start" style="gap: 12px;">
+        <div class="d-flex align-items-start gap-2 gap-md-3 mt-3">
             <img src="src/logo/logo.svg" alt="Logo Nine 0" style="height:48px;">
             <span class="customGrey" style="font-size: 7px; vertical-align: top;">#HEADER_LOGO</span>
         </div>
         <div class="container-fluid mt-4">
             <div class="row">
-                <div class="col-md-5 d-flex align-items-start justify-content-start">
-                    <img src="src/img/mascot.png" alt="Mascot Nine 0" class="img-mobile" >
+                <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-3 mb-md-0">
+                    <img src="src/img/mascot.png" alt="Mascot Nine 0" class="img-mobile img-fluid">
                 </div>
-                <div class="col-md-7">
+                <div class="col-12 col-md-7 gx-2">
                     <p class="customOrange" style="font-size: 14px;">// WEBSITE UNDER CONSTRUCTION</p>
                     <div class="d-flex align-items-center justify-content-start">
-                        <span style="display:inline-block;width:6px;height:36px;background:#F15A29;margin-right:16px;border-radius:0px;"></span>
-                        <h1 class="mb-0 customBlack" style="font-size: 39px;">VER 3.0 IS COMING SOON</h1>
+                        <span style="display:inline-block;width:6px;height:38px;background:#F15A29;margin-right:16px;border-radius:0px;"></span>
+                        <h1 class="mb-0 customBlack d-md-none d-block">VER 3.0 IS <br> COMING SOON</h1>
+                        <h1 class="mb-0 customBlack d-none d-md-block">VER 3.0 IS COMING SOON</h1>
                     </div>
-                    <div class="d-flex align-items-center mt-5">
+                    <div class="d-flex align-items-center mt-4 mt-md-5">
                         <p class="customOrange" style="font-size: 14px;">// ABOUT NINE 0</p>
                     </div>
                     <div class="d-flex align-items-center mt-2">
-                        <p class="customBlack text-wrap lh-sm" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; width: 48rem; text-align: justify">
+                        <p class="customBlack text-wrap lh-sm custom-desc" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; text-align: justify">
                             <span class="customOrange" style="font-weight: bold;">NINE 0</span> is a design company under PT Nawa Surya Kharisma, based in Jakarta and Bali, specializing in strategic creative direction, brand identity, and digital marketing.<br><br>
                             It began as a creative studio formed through the collaboration of RSF (Rafael Surya Fu) and Aik (Akhmad<br> Kharisma), both experienced in handling creative projects for various companies and brands since 2014. Today, NINE 0 delivers more than just aesthetic solutions. We offer strategic creative services that contribute in <br> achieving our clients’ business objectives.<br><br>
                             We understand that a compelling visual is not enough. What our clients need are creative solutions that not only look attractive but also support their business growth. We are committed to delivering results that go beyond aesthetics and create real value.
@@ -42,8 +82,8 @@
                     <div class="d-flex align-items-center mt-4">
                         <p class="customOrange" style="font-size: 14px;">// OUR CLIENTS</p>
                     </div>
-                    <!-- Marquee-style Slider (tanpa Owl Carousel) -->
-                    <div class="marquee-container mt-3">
+                    <!-- Marquee-style Slider (desktop only) -->
+                    <div class="marquee-container mt-3 d-none d-md-block">
                         <div class="marquee-track">
                             <img src="src/logo/mayapada.svg" alt="Client 1"/>
                             <img src="src/logo/ihc.svg" alt="Client 2"/>
@@ -68,7 +108,27 @@
                             <img src="src/logo/regal.svg" alt="Client 10"/>
                         </div>
                     </div>
-                    <div class="marquee-container mt-2">
+                    <!-- Grid 4 per baris (mobile only) -->
+                    <div class="container mt-3 d-block d-md-none">
+                        <div class="row mb-2">
+                            <div class="col-3 text-center"><img src="src/logo/mayapada.svg" alt="Client 1" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/ihc.svg" alt="Client 2" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/lps.svg" alt="Client 3" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/ojk.svg" alt="Client 4" class="img-fluid" /></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-3 text-center"><img src="src/logo/bpdlh.svg" alt="Client 5" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/pln.svg" alt="Client 6" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/prudential.svg" alt="Client 7" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/forbes.svg" alt="Client 8" class="img-fluid" /></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-3 text-center"><img src="src/logo/agincourt.svg" alt="Client 9" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/regal.svg" alt="Client 10" class="img-fluid" /></div>
+                        </div>
+                    </div>
+                    <!-- Marquee-style Slider (desktop only) baris kedua -->
+                    <div class="marquee-container mt-2 d-none d-md-block">
                         <div class="marquee-track marquee-track-reverse">
                             <img src="src/logo/sinergiBumn.svg" alt="Client 11"/>
                             <img src="src/logo/infoTech.svg" alt="Client 12"/>
@@ -93,52 +153,69 @@
                             <img src="src/logo/kka.svg" alt="Client 20"/>
                         </div>
                     </div>
+                    <!-- Grid 4 per baris (mobile only) baris kedua -->
+                    <div class="container mt-2 d-block d-md-none">
+                        <div class="row mb-2">
+                            <div class="col-3 text-center"><img src="src/logo/sinergiBumn.svg" alt="Client 11" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/infoTech.svg" alt="Client 12" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/citinova.svg" alt="Client 13" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/tbu.svg" alt="Client 14" class="img-fluid" /></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-3 text-center"><img src="src/logo/asianpaints.svg" alt="Client 15" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/serpongGarden.svg" alt="Client 16" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/rk.svg" alt="Client 17" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/selaraDamai.svg" alt="Client 18" class="img-fluid" /></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-3 text-center"><img src="src/logo/nxl.svg" alt="Client 19" class="img-fluid" /></div>
+                            <div class="col-3 text-center"><img src="src/logo/kka.svg" alt="Client 20" class="img-fluid" /></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="mt-5">
             <footer class="container-fluid py-5">
                 <div class="row justify-content-center align-items-start gx-5">
-                    <div class="col-md-3 d-flex flex-column align-items-md-start align-items-center mb-4 mb-md-0">
-                        <img src="src/img/footerNine.svg" alt="Logo Nine 0 Jakarta" style="height:48px;">
+                    <div class="col-12 col-md-2 d-flex flex-column align-items-md-start align-items-center mb-4 mb-md-0">
+                        <img src="src/img/footerNine.svg" alt="Logo Nine 0 Jakarta">
                         <p class="mt-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
                             PT Nawa Surya Kharisma<br>
                             Jl. KH Soleh Ali No.58A, RT. 004 / RW. 011
                             Tangerang, Banten, 15118
                         </p>
                     </div>
-                    <div class="col-md-3 d-flex flex-column align-items-md-start align-items-center mb-4 mb-md-0">
-                        <img src="src/img/footerNineBali.svg" alt="Logo Nine 0 Bali" style="height:48px;">
-                        <p class="mt-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
+                    <div class="col-12 col-md-2 mt-3 mt-md-0 d-flex flex-column align-items-md-start align-items-center">
+                        <img src="src/img/footerNineBali.svg" style="margin-top: -15px;" alt="Logo Nine 0 Bali">
+                        <p class="mt-md-4 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
                             Jl. Batu Belig Gg. Daksina No.1<br>
                             Kerobokan Kelod, Kuta Utara,<br>
                             Badung, Bali, 80361
                         </p>
                     </div>
-                    <div class="col-md-3 d-flex flex-column align-items-md-start align-items-center mb-4 mb-md-0">
-                        <div style="height:48px;"></div>
-                        <p class="mt-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
+                    <div class="col-12 col-md-2 d-flex flex-column align-items-md-start align-items-center mb-md-4 mb-3">
+                        <div class="mt-2 mt-md-5" >
+                        <p class="mt-md-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
                             www.nine0studio.com<br>
                             (021) 557 988 77<br>
                             +62 812 90909 587 (WA)
                         </p>
+                        </div>
                     </div>
-                    
-                    <div class="col-md-3 d-flex flex-column align-items-md-end align-items-center">
-                        <div style="height:48px;"></div>
-                        <p class="mt-4 mb-0 text-md-end text-center align-item-start" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; ">
+                    <div class="col-12 col-md d-flex flex-column align-items-md-end align-items-center">
+                        <div class="mt-md-2">
+                        <p class="mt-md-4 mb-0 text-md-end text-center align-item-start" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; ">
                             <a class="text-decoration-none customeBlack" href="https://www.instagram.com/nine0studio/" >INSTAGRAM</a><br>
                             <a class="text-decoration-none customeBlack" href="https://api.whatsapp.com/send/?phone=6281290909587&text&type=phone_number&app_absent=0" >WHATSAPP</a><br>
                             <a class="text-decoration-none customeBlack" href="mailto:rsf@nine0studio.com" >EMAIL</a>
-                            
-                        </p>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-12 text-center">
-                        <small style="font-size: 12px; font-family: 'Inter', Arial, sans-serif">
+                        <div class="col-12 text-md-end mt-3">
+                        <small style="font-size: 12px; font-family: 'Inter', Arial, sans-serif;">
                             Copyright © 2025 PT NAWA SURYA KHARISMA. All rights reserved.
                         </small>
+                        </div>
+                        </p>
+                        </div>
                     </div>
                 </div>
             </footer>
