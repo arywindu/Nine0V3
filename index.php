@@ -82,8 +82,8 @@
                     <div class="d-flex align-items-center mt-4">
                         <p class="customOrange" style="font-size: 14px;">// OUR CLIENTS</p>
                     </div>
-                    <!-- Marquee-style Slider (desktop only) -->
-                    <div class="marquee-container mt-3 d-none d-md-block">
+                    <!-- Marquee-style Slider (tanpa Owl Carousel) -->
+                    <div class="marquee-container mt-3">
                         <div class="marquee-track">
                             <img src="src/logo/mayapada.svg" alt="Client 1"/>
                             <img src="src/logo/ihc.svg" alt="Client 2"/>
@@ -108,27 +108,7 @@
                             <img src="src/logo/regal.svg" alt="Client 10"/>
                         </div>
                     </div>
-                    <!-- Grid 4 per baris (mobile only) -->
-                    <div class="container mt-3 d-block d-md-none">
-                        <div class="row mb-2">
-                            <div class="col-3 text-center"><img src="src/logo/mayapada.svg" alt="Client 1" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/ihc.svg" alt="Client 2" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/lps.svg" alt="Client 3" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/ojk.svg" alt="Client 4" class="img-fluid" /></div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-3 text-center"><img src="src/logo/bpdlh.svg" alt="Client 5" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/pln.svg" alt="Client 6" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/prudential.svg" alt="Client 7" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/forbes.svg" alt="Client 8" class="img-fluid" /></div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-3 text-center"><img src="src/logo/agincourt.svg" alt="Client 9" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/regal.svg" alt="Client 10" class="img-fluid" /></div>
-                        </div>
-                    </div>
-                    <!-- Marquee-style Slider (desktop only) baris kedua -->
-                    <div class="marquee-container mt-2 d-none d-md-block">
+                    <div class="marquee-container mt-2">
                         <div class="marquee-track marquee-track-reverse">
                             <img src="src/logo/sinergiBumn.svg" alt="Client 11"/>
                             <img src="src/logo/infoTech.svg" alt="Client 12"/>
@@ -151,25 +131,6 @@
                             <img src="src/logo/selaraDamai.svg" alt="Client 18"/>
                             <img src="src/logo/nxl.svg" alt="Client 19"/>
                             <img src="src/logo/kka.svg" alt="Client 20"/>
-                        </div>
-                    </div>
-                    <!-- Grid 4 per baris (mobile only) baris kedua -->
-                    <div class="container mt-2 d-block d-md-none">
-                        <div class="row mb-2">
-                            <div class="col-3 text-center"><img src="src/logo/sinergiBumn.svg" alt="Client 11" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/infoTech.svg" alt="Client 12" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/citinova.svg" alt="Client 13" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/tbu.svg" alt="Client 14" class="img-fluid" /></div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-3 text-center"><img src="src/logo/asianpaints.svg" alt="Client 15" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/serpongGarden.svg" alt="Client 16" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/rk.svg" alt="Client 17" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/selaraDamai.svg" alt="Client 18" class="img-fluid" /></div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-3 text-center"><img src="src/logo/nxl.svg" alt="Client 19" class="img-fluid" /></div>
-                            <div class="col-3 text-center"><img src="src/logo/kka.svg" alt="Client 20" class="img-fluid" /></div>
                         </div>
                     </div>
                 </div>
