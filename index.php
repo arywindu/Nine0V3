@@ -1,186 +1,315 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VER 3.0 IS COMING SOON</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="src/favIcon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="180x180" href="src/favIcon/favicon.jpg">
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="NINE 0 is a design company based in Jakarta and Bali, specializing in creative direction, brand identity, and digital marketing.">
-    <meta name="keywords" content="Nine 0, design, creative, branding, digital marketing, Jakarta, Bali, PT Nawa Surya Kharisma">
-    <meta name="author" content="NINE 0 Studio">
-    <meta property="og:title" content="VER 3.0 IS COMING SOON - NINE 0 Studio">
-    <meta property="og:description" content="NINE 0 is a design company based in Jakarta and Bali, specializing in creative direction, brand identity, and digital marketing.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nine0studio.com/">
-    <meta name="twitter:title" content="VER 3.0 IS COMING SOON - NINE 0 Studio">
-    <meta name="twitter:description" content="NINE 0 is a design company based in Jakarta and Bali, specializing in creative direction, brand identity, and digital marketing.">
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom CSS (external) -->
-    <link rel="stylesheet" href="main.css">
-    <!-- Custom Font -->
-    <link href="https://db.onlinewebfonts.com/c/0d37e976ab1e70a9e6a2b3659d180603?family=Square+721+Extended" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
-    <style>
-        /* Responsive helper for mascot and text */
-        @media (max-width: 767.98px) {
-            .img-mobile {
-                width: 80vw;
-                max-width: 100%;
-                height: auto;
-            }
-            .custom-desc {
-                width: 100% !important;
-                max-width: 100% !important;
-                font-size: 13px !important;
-                padding: 0 8px;
-            }
-            .marquee-container {
-                min-height: 48px;
-            }
-        }
-        @media (min-width: 768px) {
-            .custom-desc {
-                width: 48rem !important;
-                max-width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <main class="container d-flex flex-column min-vh-100">
-        <div class="d-flex align-items-start gap-2 gap-md-3 mt-3">
-            <img src="src/logo/logo.svg" alt="Logo Nine 0" style="height:48px;">
-            <span class="customGrey" style="font-size: 7px; vertical-align: top;">#HEADER_LOGO</span>
-        </div>
-        <div class="container-fluid mt-4">
-            <div class="row">
-                <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-3 mb-md-0">
-                    <img src="src/img/mascot.png" alt="Mascot Nine 0" class="img-mobile img-fluid">
-                </div>
-                <div class="col-12 col-md-7 gx-2">
-                    <p class="customOrange" style="font-size: 14px;">// WEBSITE UNDER CONSTRUCTION</p>
-                    <div class="d-flex align-items-center justify-content-start">
-                        <span style="display:inline-block;width:6px;height:38px;background:#F15A29;margin-right:16px;border-radius:0px;"></span>
-                        <h1 class="mb-0 customBlack d-md-none d-block">VER 3.0 IS <br> COMING SOON</h1>
-                        <h1 class="mb-0 customBlack d-none d-md-block">VER 3.0 IS COMING SOON</h1>
-                    </div>
-                    <div class="d-flex align-items-center mt-4 mt-md-5">
-                        <p class="customOrange" style="font-size: 14px;">// ABOUT NINE 0</p>
-                    </div>
-                    <div class="d-flex align-items-center mt-2">
-                        <p class="customBlack text-wrap lh-sm custom-desc" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; text-align: justify">
-                            <span class="customOrange" style="font-weight: bold;">NINE 0</span> is a design company under PT Nawa Surya Kharisma, based in Jakarta and Bali, specializing in strategic creative direction, brand identity, and digital marketing.<br><br>
-                            It began as a creative studio formed through the collaboration of RSF (Rafael Surya Fu) and Aik (Akhmad<br> Kharisma), both experienced in handling creative projects for various companies and brands since 2014. Today, NINE 0 delivers more than just aesthetic solutions. We offer strategic creative services that contribute in <br> achieving our clients’ business objectives.<br><br>
-                            We understand that a compelling visual is not enough. What our clients need are creative solutions that not only look attractive but also support their business growth. We are committed to delivering results that go beyond aesthetics and create real value.
-                        </p>
-                    </div>
-                    <div class="d-flex align-items-center mt-4">
-                        <p class="customOrange" style="font-size: 14px;">// OUR CLIENTS</p>
-                    </div>
-                    <!-- Marquee-style Slider (tanpa Owl Carousel) -->
-                    <div class="marquee-container mt-3">
-                        <div class="marquee-track">
-                            <img src="src/logo/mayapada.svg" alt="Client 1"/>
-                            <img src="src/logo/ihc.svg" alt="Client 2"/>
-                            <img src="src/logo/lps.svg" alt="Client 3"/>
-                            <img src="src/logo/ojk.svg" alt="Client 4"/>
-                            <img src="src/logo/bpdlh.svg" alt="Client 5"/>
-                            <img src="src/logo/pln.svg" alt="Client 6"/>
-                            <img src="src/logo/prudential.svg" alt="Client 7"/>
-                            <img src="src/logo/forbes.svg" alt="Client 8"/>
-                            <img src="src/logo/agincourt.svg" alt="Client 9"/>
-                            <img src="src/logo/regal.svg" alt="Client 10"/>
-                            <!-- Duplikat untuk seamless loop -->
-                            <img src="src/logo/mayapada.svg" alt="Client 1"/>
-                            <img src="src/logo/ihc.svg" alt="Client 2"/>
-                            <img src="src/logo/lps.svg" alt="Client 3"/>
-                            <img src="src/logo/ojk.svg" alt="Client 4"/>
-                            <img src="src/logo/bpdlh.svg" alt="Client 5"/>
-                            <img src="src/logo/pln.svg" alt="Client 6"/>
-                            <img src="src/logo/prudential.svg" alt="Client 7"/>
-                            <img src="src/logo/forbes.svg" alt="Client 8"/>
-                            <img src="src/logo/agincourt.svg" alt="Client 9"/>
-                            <img src="src/logo/regal.svg" alt="Client 10"/>
-                        </div>
-                    </div>
-                    <div class="marquee-container mt-2">
-                        <div class="marquee-track marquee-track-reverse">
-                            <img src="src/logo/sinergiBumn.svg" alt="Client 11"/>
-                            <img src="src/logo/infoTech.svg" alt="Client 12"/>
-                            <img src="src/logo/citinova.svg" alt="Client 13"/>
-                            <img src="src/logo/tbu.svg" alt="Client 14"/>
-                            <img src="src/logo/asianpaints.svg" alt="Client 15"/>
-                            <img src="src/logo/serpongGarden.svg" alt="Client 16"/>
-                            <img src="src/logo/rk.svg" alt="Client 17"/>
-                            <img src="src/logo/selaraDamai.svg" alt="Client 18"/>
-                            <img src="src/logo/nxl.svg" alt="Client 19"/>
-                            <img src="src/logo/kka.svg" alt="Client 20"/>
-                            <!-- Duplikat untuk seamless loop -->
-                            <img src="src/logo/sinergiBumn.svg" alt="Client 11"/>
-                            <img src="src/logo/infoTech.svg" alt="Client 12"/>
-                            <img src="src/logo/citinova.svg" alt="Client 13"/>
-                            <img src="src/logo/tbu.svg" alt="Client 14"/>
-                            <img src="src/logo/asianpaints.svg" alt="Client 15"/>
-                            <img src="src/logo/serpongGarden.svg" alt="Client 16"/>
-                            <img src="src/logo/rk.svg" alt="Client 17"/>
-                            <img src="src/logo/selaraDamai.svg" alt="Client 18"/>
-                            <img src="src/logo/nxl.svg" alt="Client 19"/>
-                            <img src="src/logo/kka.svg" alt="Client 20"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mt-5">
-            <footer class="container-fluid py-5">
-                <div class="row justify-content-center align-items-start gx-5">
-                    <div class="col-12 col-md-2 d-flex flex-column align-items-md-start align-items-center mb-4 mb-md-0">
-                        <img src="src/img/footerNine.svg" alt="Logo Nine 0 Jakarta">
-                        <p class="mt-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
-                            PT Nawa Surya Kharisma<br>
-                            Jl. KH Soleh Ali No.58A, RT. 004 / RW. 011
-                            Tangerang, Banten, 15118
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-2 mt-3 mt-md-0 d-flex flex-column align-items-md-start align-items-center">
-                        <img src="src/img/footerNineBali.svg" style="margin-top: -15px;" alt="Logo Nine 0 Bali">
-                        <p class="mt-md-4 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
-                            Jl. Batu Belig Gg. Daksina No.1<br>
-                            Kerobokan Kelod, Kuta Utara,<br>
-                            Badung, Bali, 80361
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-2 d-flex flex-column align-items-md-start align-items-center mb-md-4 mb-3">
-                        <div class="mt-2 mt-md-5" >
-                        <p class="mt-md-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
-                            www.nine0studio.com<br>
-                            (021) 557 988 77<br>
-                            +62 812 90909 587 (WA)
-                        </p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md d-flex flex-column align-items-md-end align-items-center">
-                        <div class="mt-md-2">
-                        <p class="mt-md-4 mb-0 text-md-end text-center align-item-start" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; ">
-                            <a class="text-decoration-none customeBlack" href="https://www.instagram.com/nine0studio/" >INSTAGRAM</a><br>
-                            <a class="text-decoration-none customeBlack" href="https://api.whatsapp.com/send/?phone=6281290909587&text&type=phone_number&app_absent=0" >WHATSAPP</a><br>
-                            <a class="text-decoration-none customeBlack" href="mailto:rsf@nine0studio.com" >EMAIL</a>
-                        <div class="col-12 text-md-end mt-3">
-                        <small style="font-size: 12px; font-family: 'Inter', Arial, sans-serif;">
-                            Copyright © 2025 PT NAWA SURYA KHARISMA. All rights reserved.
-                        </small>
-                        </div>
-                        </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </main>
-</body>
-</html>
+<?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
+ * @license	https://opensource.org/licenses/MIT	MIT License
+ * @link	https://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ */
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+switch (ENVIRONMENT)
+{
+	case 'development':
+		error_reporting(-1);
+		ini_set('display_errors', 1);
+	break;
+
+	case 'testing':
+	case 'production':
+		ini_set('display_errors', 0);
+		if (version_compare(PHP_VERSION, '5.3', '>='))
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+		}
+		else
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+		}
+	break;
+
+	default:
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'The application environment is not set correctly.';
+		exit(1); // EXIT_ERROR
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+	$system_path = 'system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * directory than the default one you can set its name here. The directory
+ * can also be renamed or relocated anywhere on your server. If you do,
+ * use an absolute (full) server path.
+ * For more info please see the user guide:
+ *
+ * https://codeigniter.com/userguide3/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ */
+	$application_folder = 'application';
+
+/*
+ *---------------------------------------------------------------
+ * VIEW DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want to move the view directory out of the application
+ * directory, set the path to it here. The directory can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application directory.
+ * If you do move this, use an absolute (full) server path.
+ *
+ * NO TRAILING SLASH!
+ */
+	$view_folder = '';
+
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here. For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller. Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ */
+	// The directory name, relative to the "controllers" directory.  Leave blank
+	// if your controller is not in a sub-directory within the "controllers" one
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  mycontroller
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (($_temp = realpath($system_path)) !== FALSE)
+	{
+		$system_path = $_temp.DIRECTORY_SEPARATOR;
+	}
+	else
+	{
+		// Ensure there's a trailing slash
+		$system_path = strtr(
+			rtrim($system_path, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		).DIRECTORY_SEPARATOR;
+	}
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
+		exit(3); // EXIT_CONFIG
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// Path to the system directory
+	define('BASEPATH', $system_path);
+
+	// Path to the front controller (this file) directory
+	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+
+	// Name of the "system" directory
+	define('SYSDIR', basename(BASEPATH));
+
+	// The path to the "application" directory
+	if (is_dir($application_folder))
+	{
+		if (($_temp = realpath($application_folder)) !== FALSE)
+		{
+			$application_folder = $_temp;
+		}
+		else
+		{
+			$application_folder = strtr(
+				rtrim($application_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
+	{
+		$application_folder = BASEPATH.strtr(
+			trim($application_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
+
+	// The path to the "views" directory
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.'views';
+	}
+	elseif (is_dir($view_folder))
+	{
+		if (($_temp = realpath($view_folder)) !== FALSE)
+		{
+			$view_folder = $_temp;
+		}
+		else
+		{
+			$view_folder = strtr(
+				rtrim($view_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.strtr(
+			trim($view_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
