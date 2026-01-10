@@ -6,7 +6,13 @@ $base_url = 'http://localhost:8080/Nine0V3/';
 // Alternative: detect from server
 if (isset($_SERVER['HTTP_HOST'])) {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
-    $base_url = $protocol . $_SERVER['HTTP_HOST'] . '/Nine0V3/';
+    
+    // Check if running on localhost to keep the subdirectory
+    if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false || strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false) {
+         $base_url = $protocol . $_SERVER['HTTP_HOST'] . '/Nine0V3/';
+    } else {
+         $base_url = $protocol . $_SERVER['HTTP_HOST'] . '/';
+    }
 }
 ?><!DOCTYPE html>
 <html>
