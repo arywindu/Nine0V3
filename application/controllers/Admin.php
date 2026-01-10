@@ -228,6 +228,49 @@ class Admin extends CI_Controller {
         exit;
     }
     
+    public function deck_password() {
+        $this->check_login();
+        
+        if ($this->input->post('action') == 'update') {
+            $password = $this->input->post('password');
+            $deck_url = $this->input->post('deck_url');
+            $expires_days = $this->input->post('expires_days');
+            
+            $data = array(
+                'password' => password_hash($password, PASSWORD_DEFAULT),
+                'deck_url' => $deck_url,
+                'expires_at' => date('Y-m-d H:i:s', strtotime("+$expires_days days"))
+            );
+            
+            // Check if setting exists
+            $this->db->select('id');
+            $this->db->from('deck_settings');
+            $query = $this->db->get();
+            
+            if ($query->num_rows() > 0) {
+                // Update
+                $this->db->where('id', $query->row()->id);
+                $this->db->update('deck_settings', $data);
+            } else {
+                // Insert
+                $this->db->insert('deck_settings', $data);
+            }
+            
+            $data['success'] = 'Deck password updated successfully';
+        }
+        
+        // Get current settings
+        $this->db->select('*');
+        $this->db->from('deck_settings');
+        $this->db->order_by('id', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        $data['title'] = 'Deck Password Settings';
+        $data['settings'] = $query->num_rows() > 0 ? $query->row() : null;
+        $this->load->view('admin/deck_password', $data);
+    }
+    
     public function logout() {
         $this->session->sess_destroy();
         redirect('admin/login');

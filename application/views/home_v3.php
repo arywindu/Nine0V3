@@ -141,7 +141,7 @@
                     <div class="col-12 col-md-2 d-flex flex-column align-items-md-start align-items-center mb-md-4 mb-3">
                         <div class="mt-2 mt-md-5" >
                         <p class="mt-md-4 mb-0 text-md-start text-center" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; max-width: 220px;">
-                            www.nine0studio.com<br>
+                            www.nine0.co.id<br>
                             (021) 557 988 77<br>
                             +62 812 90909 587 (WA)
                         </p>
@@ -150,12 +150,12 @@
                     <div class="col-12 col-md d-flex flex-column align-items-md-end align-items-center">
                         <div class="mt-md-2">
                         <p class="mt-md-4 mb-0 text-md-end text-center align-item-start" style="font-size: 12px; font-family: 'Inter', Arial, sans-serif; ">
-                            <a class="text-decoration-none customeBlack" href="https://www.instagram.com/nine0studio/" >INSTAGRAM</a><br>
-                            <a class="text-decoration-none customeBlack" href="https://api.whatsapp.com/send/?phone=6281290909587&text&type=phone_number&app_absent=0" >WHATSAPP</a><br>
-                            <a class="text-decoration-none customeBlack" href="mailto:rsf@nine0studio.com" >EMAIL</a>
+                            <a class="text-decoration-none customeBlack" href="https://www.instagram.com/nine0.co.id/" target="_blank" >INSTAGRAM</a><br>
+                            <a class="text-decoration-none customeBlack" href="https://api.whatsapp.com/send/?phone=6281290909587&text&type=phone_number&app_absent=0" target="_blank" >WHATSAPP</a><br>
+                            <a class="text-decoration-none customeBlack" href="mailto:cs@nine0.co.id" target="_blank" >EMAIL</a>
                         <div class="col-12 text-md-end mt-3">
                         <small style="font-size: 12px; font-family: 'Inter', Arial, sans-serif;">
-                            Copyright © 2025 PT NAWA SURYA KHARISMA. All rights reserved.
+                            Copyright © 2026 PT NAWA SURYA KHARISMA. All rights reserved.
                         </small>
                         </div>
                         </p>

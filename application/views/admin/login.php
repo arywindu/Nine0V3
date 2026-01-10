@@ -144,9 +144,9 @@
                         </button>
                         
                         <div class="text-center mt-4">
-                            <small class="text-muted">
+                            <!-- <small class="text-muted">
                                 Default credentials: <strong>admin</strong> / <strong>password</strong>
-                            </small>
+                            </small> -->
                         </div>
                     </form>
                 </div>

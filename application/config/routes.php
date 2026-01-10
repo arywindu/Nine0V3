@@ -50,10 +50,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
+$route['deck'] = 'home/deck';
+$route['verify-deck-password'] = 'home/verify_deck_password';
 $route['portfolio'] = 'portfolio';
 $route['admin'] = 'admin/login';
 $route['admin/dashboard'] = 'admin/dashboard';
 $route['admin/portfolio'] = 'admin/portfolio';
+$route['admin/deck_password'] = 'admin/deck_password';
 $route['admin/profile'] = 'admin/profile';
 $route['admin/get_portfolio/(:num)'] = 'admin/get_portfolio/$1';
 $route['404_override'] = '';

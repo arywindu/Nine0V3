@@ -16,6 +16,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('admin/deck_password') ?>">
+                            <i class="fas fa-lock"></i> Deck Password
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('admin/profile') ?>">
                             <i class="fas fa-user-cog"></i> Profile
                         </a>
