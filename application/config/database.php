@@ -73,46 +73,71 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default'] = array(
-    'dsn'	=> '',
-    'hostname' => 'db',
-    'username' => 'root',
-    'password' => 'root',
-    'database' => 'nine0_portfolio',
-    'dbdriver' => 'mysqli',
-    'dbprefix' => '',
-    'pconnect' => FALSE,
-    'db_debug' => (ENVIRONMENT !== 'production'),
-    'cache_on' => FALSE,
-    'cachedir' => '',
-    'char_set' => 'utf8',
-    'dbcollat' => 'utf8_general_ci',
-    'swap_pre' => '',
-  'encrypt' => false,
-    'compress' => false,
-    'stricton' => false,
-    'failover' => [],
-    'save_queries' => true,
-);
+/*
+|--------------------------------------------------------------------------
+| ENVIRONMENT-BASED DATABASE CONFIGURATION
+|--------------------------------------------------------------------------
+| Otomatis switch antara local dan production berdasarkan ENVIRONMENT.
+| Set ENVIRONMENT di index.php atau via server variable CI_ENV.
+|
+| Cara set di production (pilih salah satu):
+| 1. Di .htaccess: SetEnv CI_ENV production
+| 2. Di index.php: define('ENVIRONMENT', 'production');
+| 3. Di hosting panel: Set environment variable CI_ENV=production
+*/
 
-// $db['default'] = array(
-// 	'dsn'	=> '',
-// 	'hostname' => 'localhost',
-// 	'username' => 'root',
-// 	'password' => '',
-// 	'database' => 'nine0_portfolio',
-// 	'dbdriver' => 'mysqli',
-// 	'dbprefix' => '',
-// 	'pconnect' => FALSE,
-// 	'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'cache_on' => FALSE,
-// 	'cachedir' => '',
-// 	'char_set' => 'utf8',
-// 	'dbcollat' => 'utf8_general_ci',
-// 	'swap_pre' => '',
-// 	'encrypt' => FALSE,
-// 	'compress' => FALSE,
-// 	'stricton' => FALSE,
-// 	'failover' => array(),
-// 	'save_queries' => TRUE
-// );
+if (ENVIRONMENT === 'production') {
+    /*
+    |--------------------------------------------------------------------------
+    | PRODUCTION DATABASE
+    |--------------------------------------------------------------------------
+    */
+    $db['default'] = array(
+        'dsn'          => '',
+        'hostname'     => 'localhost',
+        'username'     => 'u389576778_Nine0',
+        'password'     => 'DB-Nin3-!@bali-jakarta!!',
+        'database'     => 'u389576778_Nine0',
+        'dbdriver'     => 'mysqli',
+        'dbprefix'     => '',
+        'pconnect'     => FALSE,
+        'db_debug'     => FALSE,        // PENTING: Matikan debug di production!
+        'cache_on'     => FALSE,
+        'cachedir'     => '',
+        'char_set'     => 'utf8',
+        'dbcollat'     => 'utf8_general_ci',
+        'swap_pre'     => '',
+        'encrypt'      => FALSE,
+        'compress'     => FALSE,
+        'stricton'     => FALSE,
+        'failover'     => array(),
+        'save_queries' => FALSE         // Hemat memory di production
+    );
+} else {
+    /*
+    |--------------------------------------------------------------------------
+    | LOCAL/DEVELOPMENT DATABASE (Docker)
+    |--------------------------------------------------------------------------
+    */
+    $db['default'] = array(
+        'dsn'          => '',
+        'hostname'     => 'db',         // Docker container name
+        'username'     => 'root',
+        'password'     => 'root',
+        'database'     => 'nine0_portfolio',
+        'dbdriver'     => 'mysqli',
+        'dbprefix'     => '',
+        'pconnect'     => FALSE,
+        'db_debug'     => TRUE,         // Aktifkan debug di development
+        'cache_on'     => FALSE,
+        'cachedir'     => '',
+        'char_set'     => 'utf8',
+        'dbcollat'     => 'utf8_general_ci',
+        'swap_pre'     => '',
+        'encrypt'      => FALSE,
+        'compress'     => FALSE,
+        'stricton'     => FALSE,
+        'failover'     => array(),
+        'save_queries' => TRUE          // Berguna untuk debugging
+    );
+}

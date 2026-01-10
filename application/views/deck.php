@@ -95,7 +95,7 @@
              <div class="d-flex align-items-center p-3" style=" border-radius: 4px; min-height: 80px;">
     
                 <div class="me-3">      
-                    <img src="<?= base_url('src/icon/icon-laptop.svg') ?>" style="width: 50px; height: auto; display: block;">
+                    <img src="<?= base_url('src/icon/icon-wifi.svg') ?>" style="width: 50px; height: auto; display: block;">
                 </div>
 
                 <p class="m-0 text-wrap lh-sm" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; color: #000;">
@@ -111,7 +111,7 @@
             <div class="d-flex align-items-center p-3" style=" border-radius: 4px; min-height: 80px;">
     
                 <div class="me-3">      
-                    <img src="<?= base_url('src/icon/icon-wifi.svg') ?>" style="width: 50px; height: auto; display: block;">
+                    <img src="<?= base_url('src/icon/icon-laptop.svg') ?>" style="width: 50px; height: auto; display: block;">
                 </div>
 
                 <p class="m-0 text-wrap lh-sm" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; color: #000;">
@@ -211,7 +211,7 @@
             </div>
 
             <!-- NOTE / SHORTCUT -->
-            <div style="
+            <!-- <div style="
                 position:absolute;
                 bottom:16px;
                 right:20px;
@@ -225,7 +225,7 @@
                 pointer-events:none;
             ">
                 ⌨ Press <b>Z</b> to toggle screen fit / content scale
-            </div>
+            </div> -->
 
         </div>
     </div>

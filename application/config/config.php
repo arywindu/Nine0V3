@@ -23,7 +23,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8080/Nine0V3/';
+/*
+|--------------------------------------------------------------------------
+| Dynamic Base URL based on ENVIRONMENT
+|--------------------------------------------------------------------------
+| Production: Ganti URL di bawah dengan domain production Anda
+| Local: Otomatis pakai localhost:8080
+*/
+if (ENVIRONMENT === 'production') {
+    $config['base_url'] = 'https://nine0.co.id/';  // Ganti dengan domain production Anda
+} else {
+    $config['base_url'] = 'http://localhost:8080/Nine0V3/';
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -225,7 +236,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------

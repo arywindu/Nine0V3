@@ -11,7 +11,7 @@ class Home extends CI_Controller {
     
     public function deck() {
         $data['title'] = 'Company Deck - NINE 0 Studio';
-        $data['meta_description'] = 'Download NINE 0 company deck and portfolio presentation.';
+        $data['meta_description'] = 'NINE 0 company deck and portfolio presentation.';
         $this->load->view('deck', $data);
     }
     

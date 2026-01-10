@@ -1,4 +1,8 @@
 <?php
+// TEMPORARY DEBUG - hapus setelah fix
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /**
  * CodeIgniter
  *
@@ -53,7 +57,19 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+/*
+ *---------------------------------------------------------------
+ * AUTO-DETECT ENVIRONMENT
+ *---------------------------------------------------------------
+ * Otomatis detect production berdasarkan domain
+ */
+if (isset($_SERVER['CI_ENV'])) {
+    define('ENVIRONMENT', $_SERVER['CI_ENV']);
+} elseif (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'nine0.co.id') !== false) {
+    define('ENVIRONMENT', 'production');
+} else {
+    define('ENVIRONMENT', 'development');
+}
 
 /*
  *---------------------------------------------------------------
@@ -72,15 +88,9 @@ switch (ENVIRONMENT)
 
 	case 'testing':
 	case 'production':
-		ini_set('display_errors', 0);
-		if (version_compare(PHP_VERSION, '5.3', '>='))
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-		}
-		else
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-		}
+		ini_set('display_errors', 1);  // TEMPORARY: Aktifkan untuk debug, matikan setelah fix
+		// Suppress PHP 8.2 deprecation warnings for CodeIgniter 3 compatibility
+		error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
 	break;
 
 	default:
