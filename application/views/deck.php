@@ -100,10 +100,10 @@
 
                 <p class="m-0 text-wrap lh-sm" style="font-size: 14px; font-family: 'Inter', Arial, sans-serif; color: #000;">
                     <b style="display: block; margin-bottom: 2px;">
-                        Please ensure a stable, high-speed internet connection to allow all page elements to <br>load properly.
+                        Please ensure a stable, high-speed internet connection to allow all page elements to <br class="d-none d-md-block">load properly.
                     </b>
                     <span>
-                        Mohon pastikan koneksi internet anda stabil dan cepat agar seluruh elemen pada <br> halaman dapat ditampilkan dengan baik.
+                        Mohon pastikan koneksi internet anda stabil dan cepat agar seluruh elemen pada <br class="d-none d-md-block"> halaman dapat ditampilkan dengan baik.
                     </span>
                 </p>
             </div>
