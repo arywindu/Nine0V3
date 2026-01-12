@@ -30,217 +30,224 @@
         </nav>
         
         <main class="col-md-10 admin-content">
-            <div class="content-header">
-                <h1 class="h2 mb-0">
-                    <i class="fas fa-lock me-2"></i>Deck Password Settings
-                </h1>
-                <p class="text-muted mb-0">Manage access password and link for the deck presentation</p>
+            <div class="content-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h2 mb-0">
+                        <i class="fas fa-lock me-2"></i>Deck Management
+                    </h1>
+                    <p class="text-muted mb-0">Manage multiple access passwords and decks</p>
+                </div>
+                <button class="btn btn-wp-primary" onclick="openCreateForm()">
+                    <i class="fas fa-plus me-2"></i>Create New Deck
+                </button>
             </div>
             
             <div class="px-4">
-                <?php if (isset($success)): ?>
+                <?php if ($this->session->flashdata('success')): ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <i class="fas fa-check-circle me-2"></i><?= $success ?>
+                        <i class="fas fa-check-circle me-2"></i><?= $this->session->flashdata('success') ?>
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>
                 <?php endif; ?>
                 
-                <?php if (isset($error)): ?>
+                <?php if ($this->session->flashdata('error')): ?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <i class="fas fa-exclamation-circle me-2"></i><?= $error ?>
+                        <i class="fas fa-exclamation-circle me-2"></i><?= $this->session->flashdata('error') ?>
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>
                 <?php endif; ?>
                 
-                <div class="row">
-                    <!-- Current Password Info Card -->
-                    <div class="col-lg-8 mb-4">
+                <!-- Deck List -->
+                <div class="row mb-4">
+                    <div class="col-12">
                         <div class="wp-card">
                             <div class="card-header bg-white border-bottom-0 py-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="mb-0">
-                                        <i class="fas fa-info-circle text-info me-2"></i>Current Deck Settings
-                                    </h5>
-                                    <button class="btn btn-sm btn-wp-primary" onclick="toggleEditForm()">
-                                        <i class="fas fa-edit me-1"></i><?= $settings ? 'Edit' : 'Create' ?> Password
-                                    </button>
+                                <h5 class="mb-0">
+                                    <i class="fas fa-list text-primary me-2"></i>Active Decks
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="ps-4">Client Name</th>
+                                                <th>Password</th>
+                                                <th>Deck URL</th>
+                                                <th>Expires At</th>
+                                                <th class="text-end pe-4">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if (!empty($decks)): ?>
+                                                <?php foreach ($decks as $deck): ?>
+                                                    <tr>
+                                                        <td class="ps-4 fw-bold"><?= isset($deck->client_name) ? $deck->client_name : 'No Name' ?></td>
+                                                        <td>
+                                                            <div class="input-group input-group-sm" style="width: 200px;">
+                                                                <input type="password" class="form-control" value="<?= $deck->password ?>" readonly id="pass-<?= $deck->id ?>">
+                                                                <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility('pass-<?= $deck->id ?>')">
+                                                                    <i class="fas fa-eye"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-truncate" style="max-width: 250px;">
+                                                            <a href="<?= $deck->deck_url ?>" target="_blank" class="text-decoration-none">
+                                                                <i class="fas fa-external-link-alt me-1"></i>Link
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <?php 
+                                                            $expires = strtotime($deck->expires_at);
+                                                            $now = time();
+                                                            $diff_days = floor(($expires - $now) / 86400);
+                                                            ?>
+                                                            <span class="badge <?= $diff_days > 3 ? 'bg-success' : ($diff_days > 0 ? 'bg-warning' : 'bg-danger') ?>">
+                                                                <?= date('M d, Y', $expires) ?>
+                                                            </span>
+                                                            <small class="text-muted d-block"><?= $diff_days > 0 ? "$diff_days days left" : "Expired" ?></small>
+                                                        </td>
+                                                        <td class="text-end pe-4">
+                                                            <button class="btn btn-sm btn-outline-primary me-1" onclick='editDeck(<?= json_encode($deck) ?>)'>
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                            <form action="<?= base_url('admin/deck_password') ?>" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this deck?');">
+                                                                <input type="hidden" name="action" value="delete">
+                                                                <input type="hidden" name="id" value="<?= $deck->id ?>">
+                                                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            <?php else: ?>
+                                                <tr>
+                                                    <td colspan="5" class="text-center py-5 text-muted">
+                                                        <i class="fas fa-inbox fa-3x mb-3"></i>
+                                                        <p>No decks found. Create one to get started.</p>
+                                                    </td>
+                                                </tr>
+                                            <?php endif; ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <?php if ($settings): ?>
-                                    <div class="table-responsive">
-                                        <table class="table table-borderless mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td style="width: 150px;"><strong><i class="fas fa-link text-primary"></i> Deck URL:</strong></td>
-                                                    <td class="text-break">
-                                                        <a href="<?= $settings->deck_url ?>" target="_blank" class="text-decoration-none">
-                                                            <?= strlen($settings->deck_url) > 80 ? substr($settings->deck_url, 0, 80) . '...' : $settings->deck_url ?>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong><i class="fas fa-calendar text-warning"></i> Expires At:</strong></td>
-                                                    <td>
-                                                        <?php 
-                                                        $expires = strtotime($settings->expires_at);
-                                                        $now = time();
-                                                        $diff_days = floor(($expires - $now) / 86400);
-                                                        ?>
-                                                        <strong><?= date('F d, Y H:i', $expires) ?></strong>
-                                                        <br>
-                                                        <span class="badge <?= $diff_days > 3 ? 'bg-success' : ($diff_days > 0 ? 'bg-warning' : 'bg-danger') ?>">
-                                                            <?= $diff_days > 0 ? "$diff_days days remaining" : "Expired" ?>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong><i class="fas fa-clock text-secondary"></i> Last Updated:</strong></td>
-                                                    <td><?= date('M d, Y H:i', strtotime($settings->updated_at)) ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong><i class="fas fa-history text-secondary"></i> Created At:</strong></td>
-                                                    <td><?= date('M d, Y H:i', strtotime($settings->created_at)) ?></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Container (Hidden by default, scrolls into view) -->
+                <div id="formContainer" class="row mb-5" style="display: none;">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="wp-card shadow-sm border-primary">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h5 class="mb-0" id="formTitle">
+                                    <i class="fas fa-plus-circle me-2"></i>Create New Deck
+                                </h5>
+                            </div>
+                            <div class="card-body p-4">
+                                <form method="post" action="<?= base_url('admin/deck_password') ?>">
+                                    <input type="hidden" name="action" value="save">
+                                    <input type="hidden" name="id" id="formId">
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Client Name</label>
+                                        <input type="text" class="form-control" name="client_name" id="formClientName" required placeholder="e.g. Acme Corp">
+                                        <small class="text-muted">Used to identify whom this deck is for.</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Access Password</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="password" id="formPassword" required placeholder="Enter a secure password">
+                                            <button class="btn btn-outline-secondary" type="button" onclick="generatePassword()">
+                                                <i class="fas fa-random"></i> Gen
+                                            </button>
+                                        </div>
+                                        <small class="text-muted">The client will use this password to access their specific deck.</small>
                                     </div>
                                     
-                                    <div class="mt-3 pt-3 border-top">
-                                        <a href="<?= base_url('deck') ?>" target="_blank" class="btn btn-outline-primary">
-                                            <i class="fas fa-external-link-alt me-2"></i>View Deck Page
-                                        </a>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Deck URL</label>
+                                        <input type="url" class="form-control" name="deck_url" id="formUrl" required placeholder="https://docs.google.com/presentation/...">
+                                        <small class="text-muted">Direct link or embed URL.</small>
                                     </div>
-                                <?php else: ?>
-                                    <div class="text-center py-5">
-                                        <i class="fas fa-lock text-muted" style="font-size: 4rem;"></i>
-                                        <h4 class="mt-3 text-muted">No Password Configured</h4>
-                                        <p class="text-muted">Click "Create Password" to set up deck access</p>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label fw-bold">Expiration</label>
+                                        <select class="form-select" name="expires_days" id="formExpires">
+                                            <option value="1">1 Day</option>
+                                            <option value="3">3 Days</option>
+                                            <option value="7" selected>7 Days</option>
+                                            <option value="14">14 Days</option>
+                                            <option value="30">30 Days</option>
+                                            <option value="90">90 Days</option>
+                                        </select>
                                     </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tips Card -->
-                    <div class="col-lg-4 mb-4">
-                        <div class="wp-card">
-                            <div class="card-header bg-white border-bottom-0 py-3">
-                                <h5 class="mb-0">
-                                    <i class="fas fa-lightbulb text-warning me-2"></i>Tips
-                                </h5>
-                            </div>
-                            <div class="card-body">
-                                <ul class="small mb-0 ps-3">
-                                    <li class="mb-2">Use strong, unique passwords</li>
-                                    <li class="mb-2"><strong>Google Slides:</strong> File → Share → Publish to web → Embed</li>
-                                    <li class="mb-2"><strong>Canva:</strong> Share → Present → Copy embed URL</li>
-                                    <li class="mb-0">Update password regularly for security</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <?php if ($settings): ?>
-                        <div class="wp-card mt-3">
-                            <div class="card-header bg-white border-bottom-0 py-3">
-                                <h5 class="mb-0">
-                                    <i class="fas fa-chart-bar text-success me-2"></i>Password Status
-                                </h5>
-                            </div>
-                            <div class="card-body text-center">
-                                <?php 
-                                $diff_days = floor((strtotime($settings->expires_at) - time()) / 86400);
-                                if ($diff_days > 7): ?>
-                                    <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
-                                    <p class="mt-2 mb-0 text-success"><strong>Active & Valid</strong></p>
-                                <?php elseif ($diff_days > 0): ?>
-                                    <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
-                                    <p class="mt-2 mb-0 text-warning"><strong>Expiring Soon</strong></p>
-                                <?php else: ?>
-                                    <i class="fas fa-times-circle text-danger" style="font-size: 3rem;"></i>
-                                    <p class="mt-2 mb-0 text-danger"><strong>Expired</strong></p>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                
-                <!-- Edit Form (Hidden by default) -->
-                <div id="editFormContainer" style="display: none;">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="wp-card">
-                                <div class="card-header bg-white border-bottom-0 py-3">
-                                    <h5 class="mb-0">
-                                        <i class="fas fa-key text-primary me-2"></i><?= $settings ? 'Update' : 'Create' ?> Password & Link
-                                    </h5>
-                                </div>
-                                <div class="card-body">
-                                    <form method="post" action="<?= base_url('admin/deck_password') ?>">
-                                        <input type="hidden" name="action" value="update">
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-bold">
-                                                <i class="fas fa-lock text-primary"></i> New Password
-                                            </label>
-                                            <input type="text" class="form-control" name="password" required 
-                                                   placeholder="Enter new password" value="">
-                                            <small class="text-muted">Leave existing if you don't want to change</small>
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-bold">
-                                                <i class="fas fa-link text-primary"></i> Deck URL (Google Slides, Canva, etc.)
-                                            </label>
-                                            <input type="url" class="form-control" name="deck_url" required
-                                                   value="<?= isset($settings->deck_url) ? $settings->deck_url : '' ?>"
-                                                   placeholder="https://docs.google.com/presentation/d/e/...">
-                                            <small class="text-muted">Use embed URL for Google Slides or presentation platforms</small>
-                                        </div>
-                                        
-                                        <div class="mb-4">
-                                            <label class="form-label fw-bold">
-                                                <i class="fas fa-calendar-alt text-primary"></i> Password Expiration (Days)
-                                            </label>
-                                            <select class="form-select" name="expires_days">
-                                                <option value="1">1 Day</option>
-                                                <option value="3">3 Days</option>
-                                                <option value="7" selected>7 Days</option>
-                                                <option value="14">14 Days</option>
-                                                <option value="30">30 Days</option>
-                                                <option value="90">90 Days</option>
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="d-flex gap-2">
-                                            <button type="submit" class="btn btn-wp-primary">
-                                                <i class="fas fa-save me-2"></i><?= $settings ? 'Update' : 'Create' ?> Settings
-                                            </button>
-                                            <button type="button" class="btn btn-secondary" onclick="toggleEditForm()">
-                                                <i class="fas fa-times me-2"></i>Cancel
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-secondary" onclick="closeForm()">Cancel</button>
+                                        <button type="submit" class="btn btn-primary px-4">Save Deck</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
     </div>
 </div>
 
 <script>
-function toggleEditForm() {
-    const form = document.getElementById('editFormContainer');
-    if (form.style.display === 'none') {
-        form.style.display = 'block';
-        form.scrollIntoView({ behavior: 'smooth' });
+function togglePasswordVisibility(id) {
+    const input = document.getElementById(id);
+    if (input.type === "password") {
+        input.type = "text";
     } else {
-        form.style.display = 'none';
+        input.type = "password";
     }
+}
+
+function openCreateForm() {
+    document.getElementById('formContainer').style.display = 'block';
+    document.getElementById('formTitle').innerHTML = '<i class="fas fa-plus-circle me-2"></i>Create New Deck';
+    document.getElementById('formId').value = '';
+    document.getElementById('formClientName').value = '';
+    document.getElementById('formPassword').value = '';
+    document.getElementById('formUrl').value = '';
+    document.getElementById('formExpires').value = '7';
+    
+    document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
+}
+
+function editDeck(deck) {
+    document.getElementById('formContainer').style.display = 'block';
+    document.getElementById('formTitle').innerHTML = '<i class="fas fa-edit me-2"></i>Edit Deck';
+    document.getElementById('formId').value = deck.id;
+    document.getElementById('formClientName').value = deck.client_name || ''; // Handle potential null
+    document.getElementById('formPassword').value = deck.password;
+    document.getElementById('formUrl').value = deck.deck_url;
+    // Expiration logic not easily reversible to select box without complex math, default to 7 or leave as is if not changing
+    // Ideally we'd calculate days remaining or show the date, but for simplicity:
+    document.getElementById('formExpires').value = '7'; 
+    
+    document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
+}
+
+function closeForm() {
+    document.getElementById('formContainer').style.display = 'none';
+}
+
+function generatePassword() {
+    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let pass = "";
+    for (let i = 0; i < 8; i++) {
+        pass += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById('formPassword').value = pass;
 }
 </script>
 

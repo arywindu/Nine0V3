@@ -20,45 +20,34 @@ class Home extends CI_Controller {
         
         $password = $this->input->post('password');
         
-        // Get deck settings
-        $this->db->select('*');
-        $this->db->from('deck_settings');
-        $this->db->order_by('id', 'DESC');
-        $this->db->limit(1);
-        $query = $this->db->get();
+        // Find deck by password
+        $this->db->where('password', $password);
+        $query = $this->db->get('deck_settings');
         
         if ($query->num_rows() == 0) {
             echo json_encode([
                 'success' => false,
-                'message' => 'Deck settings not configured'
+                'message' => 'Invalid password'
             ]);
             return;
         }
         
-        $settings = $query->row();
+        $deck = $query->row();
         
         // Check if password expired
-        if (strtotime($settings->expires_at) < time()) {
+        if (strtotime($deck->expires_at) < time()) {
             echo json_encode([
                 'success' => false,
-                'message' => 'Password has expired. Please contact admin for new password.'
+                'message' => 'This deck access has expired.'
             ]);
             return;
         }
         
-        // Verify password
-        if (password_verify($password, $settings->password)) {
-            echo json_encode([
-                'success' => true,
-                'deck_url' => $settings->deck_url,
-                'expires_at' => date('F d, Y', strtotime($settings->expires_at))
-            ]);
-        } else {
-            echo json_encode([
-                'success' => false,
-                'message' => '
-                '
-            ]);
-        }
+        // Success
+        echo json_encode([
+            'success' => true,
+            'deck_url' => $deck->deck_url,
+            'expires_at' => date('F d, Y', strtotime($deck->expires_at))
+        ]);
     }
 }

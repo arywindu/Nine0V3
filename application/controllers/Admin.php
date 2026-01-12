@@ -231,43 +231,60 @@ class Admin extends CI_Controller {
     public function deck_password() {
         $this->check_login();
         
-        if ($this->input->post('action') == 'update') {
+        $action = $this->input->post('action');
+        
+        if ($action == 'save') {
+            $id = $this->input->post('id'); // If ID exists, it's an update
             $password = $this->input->post('password');
+            $client_name = $this->input->post('client_name');
             $deck_url = $this->input->post('deck_url');
             $expires_days = $this->input->post('expires_days');
             
+            // Check if password exists (unique check)
+            $this->db->where('password', $password);
+            if ($id) {
+                $this->db->where('id !=', $id);
+            }
+            $existing = $this->db->get('deck_settings')->row();
+            
+            if ($existing) {
+                $this->session->set_flashdata('error', 'Password already in use by another deck.');
+                redirect('admin/deck_password');
+            }
+            
             $data = array(
-                'password' => password_hash($password, PASSWORD_DEFAULT),
+                'client_name' => $client_name,
+                'password' => $password, // Plain text as requested
                 'deck_url' => $deck_url,
                 'expires_at' => date('Y-m-d H:i:s', strtotime("+$expires_days days"))
             );
             
-            // Check if setting exists
-            $this->db->select('id');
-            $this->db->from('deck_settings');
-            $query = $this->db->get();
-            
-            if ($query->num_rows() > 0) {
-                // Update
-                $this->db->where('id', $query->row()->id);
+            if ($id) {
+                $this->db->where('id', $id);
                 $this->db->update('deck_settings', $data);
+                $this->session->set_flashdata('success', 'Deck updated successfully.');
             } else {
-                // Insert
+                $data['created_at'] = date('Y-m-d H:i:s');
                 $this->db->insert('deck_settings', $data);
+                $this->session->set_flashdata('success', 'New deck created successfully.');
             }
-            
-            $data['success'] = 'Deck password updated successfully';
+            redirect('admin/deck_password');
         }
         
-        // Get current settings
-        $this->db->select('*');
-        $this->db->from('deck_settings');
-        $this->db->order_by('id', 'DESC');
-        $this->db->limit(1);
-        $query = $this->db->get();
+        if ($action == 'delete') {
+            $id = $this->input->post('id');
+            if ($id) {
+                $this->db->delete('deck_settings', array('id' => $id));
+                $this->session->set_flashdata('success', 'Deck deleted successfully.');
+            }
+            redirect('admin/deck_password');
+        }
+        
+        // Get all decks
+        $this->db->order_by('created_at', 'DESC');
+        $data['decks'] = $this->db->get('deck_settings')->result();
         
         $data['title'] = 'Deck Password Settings';
-        $data['settings'] = $query->num_rows() > 0 ? $query->row() : null;
         $this->load->view('admin/deck_password', $data);
     }
     

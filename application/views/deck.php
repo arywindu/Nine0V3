@@ -332,6 +332,13 @@
                 errorModal.show();
             });
         });
+
+        // Clear iframe when modal is closed
+        const successModalEl = document.getElementById('successModal');
+        successModalEl.addEventListener('hidden.bs.modal', function () {
+            document.getElementById('deckIframe').src = '';
+            document.getElementById('passwordInput').value = ''; // Clean input as well
+        });
     </script>
 </body>
 </html>
